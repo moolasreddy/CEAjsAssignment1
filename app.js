@@ -13,10 +13,12 @@
     $scope.messageClass = "";
 
     $scope.checkLunch = function() {
+      // Spitting spearated by comma's
       var lunchItemsArray = $scope.lunchItem.split(',');
-      var cleanArray = lunchItemsArray.filter(function(item){return (item && (+item)!=0 );}) // cleaning empty values
-      var lunchItemSum = cleanArray.length; // lenght = 1 - it's maybe empty array!!! Becouse it is not lenght, it's last index+1
-
+      // cleaning empty values
+      var cleanArray = lunchItemsArray.filter(function(item){return (item && (+item)!=0 );})
+      // length = 1 - it's maybe empty array!!! Becouse it is not length, it's last index+1
+      var lunchItemSum = cleanArray.length;
       console.log(lunchItemSum);
 
       if(lunchItemSum <= 1 && !lunchItemsArray[0]){
